@@ -4,7 +4,18 @@
  */
 public class E1 {
 
+    public static String concatenarCadenas(String c1, String c2){
+		String concatenada = c1.concat(c2);
+        String invertida = "";
+		for(int i = concatenada.length() - 1 ; i >= 0; i--){
+			invertida = invertida + concatenada.charAt(i) + "";
+		}
+		return invertida;
+	}
+    
     public static void main(String[] args) {
-        
+        String cadena1 = Utilidades.leerCadena("Primera cadena: ");
+        String cadena2 = Utilidades.leerCadena("Segunda cadena: ");
+        System.out.println(concatenarCadenas(cadena1, cadena2));
     }
 }
