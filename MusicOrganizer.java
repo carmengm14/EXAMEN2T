@@ -15,8 +15,8 @@ public class MusicOrganizer
     private MusicPlayer player;
     // A reader that can read music files and load them as tracks.
     private TrackReader reader;
-
     private String lastTrackPlaying;
+    private ArrayList<Track> tracks4;
 
     /**
      * Create a MusicOrganizer
@@ -78,6 +78,7 @@ public class MusicOrganizer
     {
         return tracks.size();
     }
+    
     
     /**
      * List a track from the collection.
@@ -191,4 +192,15 @@ public class MusicOrganizer
             }
         }
     }
+    public void finLongTracks(int index)
+    {
+        Track seconds = index.getSeconds();
+        if (seconds > 240) {
+            System.out.print("Track " + index + ": ");
+            Track track = tracks.get(index);
+            System.out.println(track);
+        }
+       
+    }
+    
 }
