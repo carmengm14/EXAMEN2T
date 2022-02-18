@@ -13,7 +13,7 @@ import java.util.ArrayList;
 * Haz commit. */
 public class E2 {
     public ArrayList<Integer> obtenerObjetos(ArrayList<Integer> o1, ArrayList<Integer> o2) {
-        ArrayList<Integer> operacion;
+        int operacion = 0;
         for (int i = 0; i < o1.size(); i++) {
             operacion = o1.get(i)%o2.get(i);
         }
@@ -27,10 +27,12 @@ public class E2 {
 
        int operando1 = Utilidades.leerEntero("Escribe tus numeros: ");
        int operando2 = Utilidades.leerEntero("Escribe otros numeros: ");
-        
+
+       primero.get(operando1) ;
+       segundo.get(operando2);
      
        if (primero.size() == segundo.size()) {
-           
+           obtenerObjetos(primero,segundo);
        }
     }
 }
