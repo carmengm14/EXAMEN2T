@@ -18,6 +18,9 @@ public class Track
 
     private String album;
     
+    private int seconds;
+
+    
     /**
      * Constructor for objects of class Track.
      * @param artist The track's artist.
@@ -26,8 +29,9 @@ public class Track
      */
     public Track(String artist, String title, String filename)
     {
-        setDetails(artist, title, filename);
+        setDetails(artist, title, filename,seconds);
     }
+    
     
     /**
      * Constructor for objects of class Track.
@@ -37,7 +41,7 @@ public class Track
      */
     public Track(String filename)
     {
-        setDetails("unknown", "unknown", filename);
+        setDetails("unknown", "unknown", filename,seconds);
     }
     
     /**
@@ -74,6 +78,14 @@ public class Track
     public String getAlbum(){
         return album;
     }
+    //getters y setters de seconds
+    public int getSeconds() {
+        return seconds;
+    }
+    public void setSeconds(int seconds) {
+        this.seconds = seconds;
+    }
+
           
     /**
      * Set details of the track.
@@ -81,11 +93,12 @@ public class Track
      * @param title The track's title.
      * @param filename The track file. 
      */
-    private void setDetails(String artist, String title, String filename)
+    private void setDetails(String artist, String title, String filename, int seconds)
     {
         this.artist = artist;
         this.title = title;
         this.filename = filename;
+        this.seconds = seconds;
     }
 
     public void resetPlayCount(){
@@ -101,5 +114,15 @@ public class Track
         return artist + ": " + title +
                 "  (file: " + filename + ")" + 
                 " " + album;
+    }
+    //metodo incrementar
+    public void incrementar(int segundos){
+        int segundosinc = getSeconds() + segundos;
+        System.out.println(segundosinc);
+    }
+    //metodo decrementar
+    public void decrementar(int segundos){
+        int segundosdec = getSeconds() - segundos;
+        System.out.println(segundosdec);
     }
 }
